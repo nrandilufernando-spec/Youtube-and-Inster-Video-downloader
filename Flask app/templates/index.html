@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader - Original Flow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video Downloader</h1>
+            <p>Using Original Function Flow</p>
+        </header>
+
+        <main>
+            <!-- Platform Selection (Your selector function) -->
+            <div class="platform-selection">
+                <h3>Select Platform:</h3>
+                <div class="platform-buttons">
+                    <button class="platform-btn active" data-platform="1">YouTube</button>
+                    <button class="platform-btn" data-platform="2">Instagram</button>
+                </div>
+            </div>
+
+            <!-- URL Input (Your get_input function) -->
+            <div class="url-input-section">
+                <input type="text" id="urlInput" placeholder="Enter video URL...">
+                <button id="getInfoBtn">Get Video Info</button>
+            </div>
+
+            <!-- Video Information -->
+            <div id="videoInfo" class="video-info hidden">
+                <div class="thumbnail-container">
+                    <img id="thumbnail" src="" alt="Video thumbnail">
+                </div>
+                <div class="video-details">
+                    <h3 id="videoTitle"></h3>
+                    <p id="videoDuration"></p>
+                </div>
+            </div>
+
+            <!-- Format Selection (Your process2 and process functions) -->
+            <div id="formatSelection" class="format-selection hidden">
+                <h3>Select Format:</h3>
+                <div class="format-buttons">
+                    <button class="format-btn" data-format="1">360p MP4</button>
+                    <button class="format-btn" data-format="2">720p MP4</button>
+                    <button class="format-btn" data-format="3">1080p MP4</button>
+                    <button class="format-btn" data-format="4">Audio Only</button>
+                </div>
+            </div>
+
+            <!-- Download Progress (Your get_output function) -->
+            <div id="downloadProgress" class="download-progress hidden">
+                <h3>Download Progress</h3>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p id="progressText">0%</p>
+                <p id="statusMessage"></p>
+                <!-- DOWNLOAD BUTTON -->
+                <button id="downloadFileBtn" class="download-button hidden">Download File</button>
+            </div>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
