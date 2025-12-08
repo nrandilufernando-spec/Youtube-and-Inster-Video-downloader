@@ -183,6 +183,4 @@ process2()
 
 ---
 
-## 📬 Support
 
-If you want, I can also generate a cleaner version of the script or turn this into a fully functional GUI app.
